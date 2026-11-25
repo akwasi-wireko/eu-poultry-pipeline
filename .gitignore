@@ -15,3 +15,6 @@ wheels/
 # Data produced by the pipeline
 data/
 *.sqlite3
+
+# Vscode settings
+.vscode/
