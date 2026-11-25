@@ -7,7 +7,12 @@ authors = [
     { name = "Akwasi Wireko", email = "wrencopress@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "httpx>=0.28.1",
+    "polars>=2.2.0",
+    "prefect>=3.9.5",
+    "python-dotenv>=1.2.4",
+]
 
 [project.scripts]
 eu-poultry-pipeline = "eu_poultry_pipeline:main"
@@ -15,3 +20,9 @@ eu-poultry-pipeline = "eu_poultry_pipeline:main"
 [build-system]
 requires = ["uv_build>=0.13.9,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+]
