@@ -1,4 +1,4 @@
 def test_the_package_imports():
-    import my_pipeline
+    import eu_poultry_pipeline
 
-    assert my_pipeline is not None
+    assert eu_poultry_pipeline is not None
