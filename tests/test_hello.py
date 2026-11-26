@@ -1,4 +1,4 @@
-from eu_poultry_pipeline.hello import hello_pipeline
+from my_pipeline.hello import hello_pipeline
 
 
 def test_hello_pipeline_multiplies_by_ten():

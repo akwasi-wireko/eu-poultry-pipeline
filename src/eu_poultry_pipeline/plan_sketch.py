@@ -55,7 +55,10 @@ def validate_poultry_prices(raw_records: list[dict]) -> list[dict]:
 def save_medallion_layers(raw_records: list[dict], valid_records: list[dict]) -> None:
     """Simulate saving raw JSON to Bronze, typed rows to Silver, and ML features to Gold."""
     print(f"Bronze: Saved {len(raw_records)} raw API records with ingestion timestamp.")
-    print(f"Silver: Upserted {len(valid_records)} clean rows by (member_state_code, product_code, begin_date).")
+    print(
+        f"Silver: Upserted {len(valid_records)} clean rows by "
+        "(member_state_code, product_code, begin_date)."
+    )
     print("Gold: Computed weekly forecasting lags and rolling averages for ML.")
 
 

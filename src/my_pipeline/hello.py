@@ -39,7 +39,10 @@ def hello_pipeline(name: str = "world") -> list[int]:
     # print(f"Hello, {name}! Starting the pipeline.")
 
     # Testing if Prefect my local code or the code on Github.
-    print(f"This line was just committed to Github. Testing if Prefect is running the local code or the code on Github.")
+    print(
+        "This line was just committed to Github. Testing if Prefect is "
+        "running the local code or the code on Github."
+    )
 
     numbers = extract()
     bigger = transform(numbers)
