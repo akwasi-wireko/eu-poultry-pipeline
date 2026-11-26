@@ -1,0 +1,20 @@
+# How Prefect Cloud gets and runs this project's code.
+name: eu-poultry-pipeline
+
+# Before every run, Prefect clones the repository and moves into src/,
+# so that `import my_pipeline` works.
+pull:
+  - prefect.deployments.steps.git_clone:
+      id: clone
+      repository: https://github.com/akwasi-wireko/eu-poultry-pipeline.git
+      branch: main
+  - prefect.deployments.steps.set_working_directory:
+      directory: "{{ clone.directory }}/src"
+
+deployments:
+  - name: hello
+    entrypoint: eu_poultry_pipeline/hello.py:hello_pipeline
+    parameters:
+      name: Prefect Cloud
+    work_pool:
+      name: my-managed-pool
