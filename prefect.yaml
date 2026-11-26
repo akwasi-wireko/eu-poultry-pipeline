@@ -18,6 +18,13 @@ deployments:
       name: Prefect Cloud
     work_pool:
       name: my-managed-pool
-    schedules:
-      - cron: "0 9 * * 1-5"
-        timezone: Africa/Accra
+    # schedules:
+    #   - cron: "0 9 * * 1-5"
+    #     timezone: Africa/Accra
+
+  - name: eu-poultry-hello
+    entrypoint: eu_poultry_pipeline/plan_sketch.py:hello_eu_poultry_pipeline
+    parameters:
+      name: EU Poultry in Prefect Cloud
+    work_pool:
+      name: my-managed-pool
