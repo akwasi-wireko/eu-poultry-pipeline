@@ -36,7 +36,11 @@ def load(numbers: list[int]) -> None:
 @flow(log_prints=True)
 def hello_pipeline(name: str = "world") -> list[int]:
     """Run extract, transform and load in order."""
-    print(f"Hello, {name}! Starting the pipeline.")
+    # print(f"Hello, {name}! Starting the pipeline.")
+
+    # Testing if Prefect my local code or the code on Github.
+    print(f"This line was just committed to Github. Testing if Prefect is running the local code or the code on Github.")
+
     numbers = extract()
     bigger = transform(numbers)
     load(bigger)
